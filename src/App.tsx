@@ -109,18 +109,20 @@ export default function App() {
           dataInteracoes.push(items.reduce((acc, p) => acc + p.interacoes, 0));
         });
       } else {
-        // Mostra evolução diária de 01/10 a 14/10
+        // Mostra evolução diária de 01/10 a 18/10
         const dates = [
           '2026-10-01', '2026-10-02', '2026-10-03', '2026-10-04',
           '2026-10-05', '2026-10-06', '2026-10-07', '2026-10-08',
           '2026-10-09', '2026-10-10', '2026-10-11', '2026-10-12',
-          '2026-10-13', '2026-10-14'
+          '2026-10-13', '2026-10-14', '2026-10-15', '2026-10-16',
+          '2026-10-17', '2026-10-18'
         ];
         labels = [
           '01/10 (Qui)', '02/10 (Sex)', '03/10 (Sáb)', '04/10 (Dom)',
           '05/10 (Seg)', '06/10 (Ter)', '07/10 (Qua)', '08/10 (Qui)',
           '09/10 (Sex)', '10/10 (Sáb)', '11/10 (Dom)', '12/10 (Seg)',
-          '13/10 (Ter)', '14/10 (Qua)'
+          '13/10 (Ter)', '14/10 (Qua)', '15/10 (Qui)', '16/10 (Sex)',
+          '17/10 (Sáb)', '18/10 (Dom)'
         ];
         dates.forEach(d => {
           const items = filteredPosts.filter(p => p.data === d);
@@ -452,7 +454,7 @@ export default function App() {
                 {/* Tag de Contexto Atualizada */}
                 <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-bold bg-blue-50 text-[#005599] border border-blue-200 shadow-2xs">
                   <span className="w-2 h-2 rounded-full bg-[#005599] animate-pulse"></span>
-                  Base Oficial Atualizada: (01 a 14/10/2026)
+                  Base Oficial Atualizada: (01 a 18/10/2026)
                 </span>
               </div>
 
@@ -463,7 +465,7 @@ export default function App() {
                 <p className="text-xs text-slate-500 mt-1 flex items-center gap-2 flex-wrap">
                   <span>Grupo Ativo: <strong className="text-slate-700">ANIVERSÁRIO ASSAÍ 2026</strong></span>
                   <span>·</span>
-                  <span>Período: <strong className="text-slate-700">01 a 14/10/2026</strong></span>
+                  <span>Período: <strong className="text-slate-700">01 a 18/10/2026</strong></span>
                   <span>·</span>
                   <span>Canais: <strong className="text-slate-700">Instagram Feed, Stories, Facebook e TikTok</strong></span>
                 </p>
@@ -507,7 +509,7 @@ export default function App() {
                 onChange={(e) => setDateFilter(e.target.value)}
                 className="w-full bg-gray-50 border border-gray-200 text-slate-700 text-sm rounded-lg px-3 py-2 pr-8 focus:outline-none focus:ring-2 focus:ring-[#005599] focus:bg-white transition-colors cursor-pointer"
               >
-                <option value="all">Todo o Período: Campanha de Aniversário (01 a 14/10/2026)</option>
+                <option value="all">Todo o Período: Campanha de Aniversário (01 a 18/10/2026)</option>
                 <option value="2026-10-01">01/10/2026 · Quinta-feira (Lançamento Oficial)</option>
                 <option value="2026-10-02">02/10/2026 · Sexta-feira</option>
                 <option value="2026-10-03">03/10/2026 · Sábado</option>
@@ -522,6 +524,10 @@ export default function App() {
                 <option value="2026-10-12">12/10/2026 · Segunda-feira (Dia das Crianças / Economizasso)</option>
                 <option value="2026-10-13">13/10/2026 · Terça-feira (Perfis Fakes / Ganhadores)</option>
                 <option value="2026-10-14">14/10/2026 · Quarta-feira (Vantagens MP / Prêmios)</option>
+                <option value="2026-10-15">15/10/2026 · Quinta-feira (Ganhadores / Segurança / Disputa)</option>
+                <option value="2026-10-16">16/10/2026 · Sexta-feira (Como Saber se Ganhei / Prêmios)</option>
+                <option value="2026-10-17">17/10/2026 · Sábado (Ofertas Urgentes / Mecânica e Aceleradores)</option>
+                <option value="2026-10-18">18/10/2026 · Domingo (Confira os Ganhadores / Venha Aproveitar)</option>
               </select>
             </div>
 
@@ -535,10 +541,10 @@ export default function App() {
                 className="w-full bg-gray-50 border border-gray-200 text-slate-700 text-sm rounded-lg px-3 py-2 pr-8 focus:outline-none focus:ring-2 focus:ring-[#005599] focus:bg-white transition-colors cursor-pointer"
               >
                 <option value="all">Redes Sociais (Todas as 4 Redes · {totals.totalPosts} Posts)</option>
-                <option value="Instagram Feed">Instagram Feed (25 Posts · 15 Reels e 10 Carrosséis)</option>
-                <option value="Instagram Stories">Instagram Stories (159 Stories)</option>
-                <option value="Facebook">Facebook (20 Posts)</option>
-                <option value="Tiktok">TikTok (19 Vídeos Curtos)</option>
+                <option value="Instagram Feed">Instagram Feed (29 Posts · 16 Reels e 13 Carrosséis)</option>
+                <option value="Instagram Stories">Instagram Stories (201 Stories)</option>
+                <option value="Facebook">Facebook (24 Posts)</option>
+                <option value="Tiktok">TikTok (22 Vídeos Curtos)</option>
               </select>
             </div>
 
@@ -701,7 +707,7 @@ export default function App() {
           <div className="px-5 sm:px-6 py-4 border-b border-gray-100 flex items-center justify-between">
             <div>
               <h2 className="text-base font-bold text-[#005599] tracking-tight">
-                Visão Consolidada por Rede Social (01 a 14/10/2026)
+                Visão Consolidada por Rede Social (01 a 18/10/2026)
               </h2>
               <p className="text-xs text-slate-500 mt-0.5">
                 Métricas oficiais por canal na Campanha de Aniversário 2026 ({totals.totalPosts} Publicações)
@@ -924,7 +930,7 @@ export default function App() {
               {/* Insight Box Oficial */}
               <div className="mt-3 p-3 bg-blue-50/70 border border-blue-100 rounded-lg text-xs text-slate-700 leading-relaxed">
                 <span className="font-bold text-[#005599]">Insight de Eficiência:</span> 
-                O <strong>Instagram Feed</strong> concentrou o maior volume de impactos (<strong>6.041.298</strong>) e interações (<strong>252.970 com 224.981 curtidas</strong>), sustentando taxa ponderada de <strong>5,80%</strong>. O <strong>Instagram Stories</strong> foi o grande motor de tráfego qualificado com expressivos <strong>40.234 cliques no link</strong> em 159 stories. O <strong>Facebook</strong> consolidou 291.172 impactos e 5.446 interações com <strong>2,53%</strong> de taxa ponderada, e o <strong>TikTok</strong> registrou <strong>3,09%</strong> de taxa ponderada nos 19 vídeos curtos de ofertas.
+                O <strong>Instagram Feed</strong> concentrou o maior volume de impactos (<strong>6.367.345</strong>) e interações (<strong>255.219 com 226.766 curtidas</strong>), sustentando taxa ponderada de <strong>5,62%</strong>. O <strong>Instagram Stories</strong> foi o grande motor de tráfego qualificado com expressivos <strong>44.539 cliques no link</strong> em 201 stories. O <strong>Facebook</strong> consolidou 373.482 impactos e 6.605 interações com <strong>2,38%</strong> de taxa ponderada, e o <strong>TikTok</strong> registrou <strong>2,98%</strong> de taxa ponderada nos 22 vídeos curtos de ofertas.
               </div>
             </div>
           </div>
@@ -941,7 +947,7 @@ export default function App() {
                 </h2>
               </div>
               <p className="text-xs text-slate-500 mt-0.5">
-                Registros individuais cadastrados na Campanha de Aniversário 2026 (01 a 14/10/2026)
+                Registros individuais cadastrados na Campanha de Aniversário 2026 (01 a 18/10/2026)
               </p>
             </div>
 
@@ -1074,7 +1080,7 @@ export default function App() {
               <span>Mega Mídia Group</span>
             </span>
             <span>·</span>
-            <span>Campanha de Aniversário 2026 (01 a 14/10/2026) · Monitoramento Oficial</span>
+            <span>Campanha de Aniversário 2026 (01 a 18/10/2026) · Monitoramento Oficial</span>
           </div>
           <div className="flex items-center gap-4 font-semibold">
             <button
@@ -1117,7 +1123,7 @@ export default function App() {
             </div>
 
             <p className="text-xs text-slate-500">
-              {totals.totalPosts} publicações consolidadas cobrindo Instagram Feed, Instagram Stories, Facebook e TikTok (01/10 a 14/10/2026).
+              {totals.totalPosts} publicações consolidadas cobrindo Instagram Feed, Instagram Stories, Facebook e TikTok (01/10 a 18/10/2026).
             </p>
 
             <div className="bg-slate-900 text-slate-200 p-3.5 rounded-lg text-[11px] font-mono overflow-x-auto max-h-48 leading-relaxed">
@@ -1178,7 +1184,7 @@ export default function App() {
             <div className="space-y-3 text-xs text-slate-600 max-h-80 overflow-y-auto pr-1">
               <div>
                 <h4 className="font-bold text-slate-900 text-sm">Impactos (Impressões)</h4>
-                <p>Número total de vezes que as publicações, vídeos e stories foram exibidos aos usuários ({formatNumber(totals.impressoes)} impactos no consolidado de 01 a 14/10).</p>
+                <p>Número total de vezes que as publicações, vídeos e stories foram exibidos aos usuários ({formatNumber(totals.impressoes)} impactos no consolidado de 01 a 18/10).</p>
               </div>
               <div>
                 <h4 className="font-bold text-slate-900 text-sm">Alcance Consolidado</h4>
