@@ -109,7 +109,7 @@ export default function App() {
           dataInteracoes.push(items.reduce((acc, p) => acc + p.interacoes, 0));
         });
       } else {
-        // Mostra evolução diária de 01/10 a 27/10
+        // Mostra evolução diária de 01/10 a 31/10
         const dates = [
           '2026-10-01', '2026-10-02', '2026-10-03', '2026-10-04',
           '2026-10-05', '2026-10-06', '2026-10-07', '2026-10-08',
@@ -117,7 +117,8 @@ export default function App() {
           '2026-10-13', '2026-10-14', '2026-10-15', '2026-10-16',
           '2026-10-17', '2026-10-18', '2026-10-19', '2026-10-20',
           '2026-10-21', '2026-10-22', '2026-10-23', '2026-10-24',
-          '2026-10-25', '2026-10-26', '2026-10-27'
+          '2026-10-25', '2026-10-26', '2026-10-27', '2026-10-28',
+          '2026-10-29', '2026-10-30', '2026-10-31'
         ];
         labels = [
           '01/10 (Qui)', '02/10 (Sex)', '03/10 (Sáb)', '04/10 (Dom)',
@@ -126,7 +127,8 @@ export default function App() {
           '13/10 (Ter)', '14/10 (Qua)', '15/10 (Qui)', '16/10 (Sex)',
           '17/10 (Sáb)', '18/10 (Dom)', '19/10 (Seg)', '20/10 (Ter)',
           '21/10 (Qua)', '22/10 (Qui)', '23/10 (Sex)', '24/10 (Sáb)',
-          '25/10 (Dom)', '26/10 (Seg)', '27/10 (Ter)'
+          '25/10 (Dom)', '26/10 (Seg)', '27/10 (Ter)', '28/10 (Qua)',
+          '29/10 (Qui)', '30/10 (Sex)', '31/10 (Sáb)'
         ];
         dates.forEach(d => {
           const items = filteredPosts.filter(p => p.data === d);
@@ -458,7 +460,7 @@ export default function App() {
                 {/* Tag de Contexto Atualizada */}
                 <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-bold bg-blue-50 text-[#005599] border border-blue-200 shadow-2xs">
                   <span className="w-2 h-2 rounded-full bg-[#005599] animate-pulse"></span>
-                  Base Oficial Atualizada: (01 a 27/10/2026)
+                  Base Oficial Atualizada: (01 a 31/10/2026)
                 </span>
               </div>
 
@@ -469,7 +471,7 @@ export default function App() {
                 <p className="text-xs text-slate-500 mt-1 flex items-center gap-2 flex-wrap">
                   <span>Grupo Ativo: <strong className="text-slate-700">ANIVERSÁRIO ASSAÍ 2026</strong></span>
                   <span>·</span>
-                  <span>Período: <strong className="text-slate-700">01 a 27/10/2026</strong></span>
+                  <span>Período: <strong className="text-slate-700">01 a 31/10/2026</strong></span>
                   <span>·</span>
                   <span>Canais: <strong className="text-slate-700">Instagram Feed, Stories, Facebook e TikTok</strong></span>
                 </p>
@@ -513,7 +515,7 @@ export default function App() {
                 onChange={(e) => setDateFilter(e.target.value)}
                 className="w-full bg-gray-50 border border-gray-200 text-slate-700 text-sm rounded-lg px-3 py-2 pr-8 focus:outline-none focus:ring-2 focus:ring-[#005599] focus:bg-white transition-colors cursor-pointer"
               >
-                <option value="all">Todo o Período: Campanha de Aniversário (01 a 27/10/2026)</option>
+                <option value="all">Todo o Período: Campanha de Aniversário (01 a 31/10/2026)</option>
                 <option value="2026-10-01">01/10/2026 · Quinta-feira (Lançamento Oficial)</option>
                 <option value="2026-10-02">02/10/2026 · Sexta-feira</option>
                 <option value="2026-10-03">03/10/2026 · Sábado</option>
@@ -541,6 +543,10 @@ export default function App() {
                 <option value="2026-10-25">25/10/2026 · Domingo (Confira os Ganhadores / Praticidade MP)</option>
                 <option value="2026-10-26">26/10/2026 · Segunda-feira (Perfis Fakes / Hora do Lanche / Se Você se Perdesse)</option>
                 <option value="2026-10-27">27/10/2026 · Terça-feira (Interativo Prêmios / Passaí / Ainda Dá Tempo PJ)</option>
+                <option value="2026-10-28">28/10/2026 · Quarta-feira (Trend Pronúncia / Márcia Fu / Imbatível Amanhã)</option>
+                <option value="2026-10-29">29/10/2026 · Quinta-feira (Dia Imbatível / Theodoro / Faro)</option>
+                <option value="2026-10-30">30/10/2026 · Sexta-feira (Últimas Horas / Ainda Dá Tempo / Parece Bom Demais)</option>
+                <option value="2026-10-31">31/10/2026 · Sábado (Último Dia / Retrô Aniversário / Fim da Campanha)</option>
               </select>
             </div>
 
@@ -554,10 +560,10 @@ export default function App() {
                 className="w-full bg-gray-50 border border-gray-200 text-slate-700 text-sm rounded-lg px-3 py-2 pr-8 focus:outline-none focus:ring-2 focus:ring-[#005599] focus:bg-white transition-colors cursor-pointer"
               >
                 <option value="all">Redes Sociais (Todas as 4 Redes · {totals.totalPosts} Posts)</option>
-                <option value="Instagram Feed">Instagram Feed (43 Posts · 26 Reels, 15 Carrosséis e 2 Estáticos)</option>
-                <option value="Instagram Stories">Instagram Stories (297 Stories)</option>
-                <option value="Facebook">Facebook (34 Posts · 14 Estáticos, 11 Carrosséis e 9 Vídeos)</option>
-                <option value="Tiktok">TikTok (33 Vídeos Curtos)</option>
+                <option value="Instagram Feed">Instagram Feed (53 Posts · 35 Reels, 15 Carrosséis e 3 Estáticos)</option>
+                <option value="Instagram Stories">Instagram Stories (321 Stories)</option>
+                <option value="Facebook">Facebook (40 Posts · 14 Estáticos, 14 Vídeos e 12 Carrosséis)</option>
+                <option value="Tiktok">TikTok (41 Vídeos Curtos)</option>
               </select>
             </div>
 
@@ -720,7 +726,7 @@ export default function App() {
           <div className="px-5 sm:px-6 py-4 border-b border-gray-100 flex items-center justify-between">
             <div>
               <h2 className="text-base font-bold text-[#005599] tracking-tight">
-                Visão Consolidada por Rede Social (01 a 27/10/2026)
+                Visão Consolidada por Rede Social (01 a 31/10/2026)
               </h2>
               <p className="text-xs text-slate-500 mt-0.5">
                 Métricas oficiais por canal na Campanha de Aniversário 2026 ({totals.totalPosts} Publicações)
@@ -786,9 +792,9 @@ export default function App() {
                             {isStories 
                               ? `${item.postsCount} Stories · ${formatNumber(item.cliquesLink || 0)} cliques link` 
                               : isFeed 
-                              ? `${item.postsCount} Posts (26 Reels, 15 Carrosséis, 2 Estáticos)` 
+                              ? `${item.postsCount} Posts (35 Reels, 15 Carrosséis, 3 Estáticos)` 
                               : isFb 
-                              ? `${item.postsCount} Publicações (14 Estáticos, 11 Carrosséis, 9 Vídeos)` 
+                              ? `${item.postsCount} Publicações (14 Estáticos, 14 Vídeos, 12 Carrosséis)` 
                               : `${item.postsCount} Vídeos Curtos de Ofertas`}
                           </span>
                         </div>
@@ -949,13 +955,13 @@ export default function App() {
               {/* Insight Box Oficial */}
               <div className="mt-3 p-3 bg-blue-50/70 border border-blue-100 rounded-lg text-xs text-slate-700 leading-relaxed">
                 <span className="font-bold text-[#005599]">Insight de Eficiência:</span>{' '}
-                O <strong>Instagram Feed</strong> concentrou expressivo volume de impactos (<strong>7.423.675</strong>) e interações (<strong>262.596 com 232.593 curtidas</strong> em 43 posts), sustentando taxa ponderada de <strong>4,95%</strong>. O <strong>Instagram Stories</strong> segue como o grande motor de tráfego qualificado alcançando <strong>69.746 cliques no link</strong> em 297 stories (com picos de 6.699 cliques em Passaí, <strong>5.632 cliques / 18,92% ER</strong> em Ofertas que te dão Prêmios e <strong>4.018 cliques / 12,28% ER</strong> em 26/10). O <strong>Facebook</strong> consolidou 527.164 impactos e 7.897 interações em 34 publicações (<strong>2,01%</strong> ponderado), e o <strong>TikTok</strong> registrou <strong>2,93%</strong> de taxa ponderada (<strong>3,03%</strong> média) nos 33 vídeos curtos.
+                O <strong>Instagram Feed</strong> ultrapassou os <strong>10,2 milhões de impactos</strong> (10.225.979) e <strong>324.809 interações</strong> em 53 posts (taxa ponderada de <strong>4,25%</strong>), impulsionado pelas ações com creators (Márcia Fu e Theodoro) e o fenômeno do <em>Trend Pronúncia</em> (<strong>38.738 interações e 15,16% ER</strong>). O <strong>Instagram Stories</strong> fechou a campanha com <strong>80.689 cliques no link</strong> em 321 stories, gerando conversão recorde em dias de pico comercial (destaque para os <strong>6.305 cliques / 11,57% ER</strong> na reta final). O <strong>Facebook</strong> ampliou sua presença para <strong>694.465 impactos</strong> e 12.206 interações em 40 publicações (<strong>2,18% ponderado</strong>, alavancado pelos vídeos do <em>Dia Imbatível</em>), enquanto o <strong>TikTok</strong> encerrou com <strong>41 vídeos curtos</strong>, acumulando taxa de engajamento de <strong>3,09% média</strong> (2,88% ponderada).
               </div>
             </div>
           </div>
         </section>
 
-        {/* 6. TABELA COMPLETA COM AS 407 PUBLICAÇÕES */}
+        {/* 6. TABELA COMPLETA COM AS 455 PUBLICAÇÕES */}
         <section id="sectionPosts" className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden print-break-inside-avoid">
           <div className="px-5 sm:px-6 py-4 border-b border-gray-100 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
             <div>
@@ -966,7 +972,7 @@ export default function App() {
                 </h2>
               </div>
               <p className="text-xs text-slate-500 mt-0.5">
-                Registros individuais cadastrados na Campanha de Aniversário 2026 (01 a 27/10/2026)
+                Registros individuais cadastrados na Campanha de Aniversário 2026 (01 a 31/10/2026)
               </p>
             </div>
 
@@ -1106,7 +1112,7 @@ export default function App() {
               <span>Mega Mídia Group</span>
             </span>
             <span>·</span>
-            <span>Campanha de Aniversário 2026 (01 a 27/10/2026) · Monitoramento Oficial</span>
+            <span>Campanha de Aniversário 2026 (01 a 31/10/2026) · Monitoramento Oficial</span>
           </div>
           <div className="flex items-center gap-4 font-semibold">
             <button
@@ -1149,7 +1155,7 @@ export default function App() {
             </div>
 
             <p className="text-xs text-slate-500">
-              {totals.totalPosts} publicações consolidadas cobrindo Instagram Feed, Instagram Stories, Facebook e TikTok (01/10 a 27/10/2026).
+              {totals.totalPosts} publicações consolidadas cobrindo Instagram Feed, Instagram Stories, Facebook e TikTok (01/10 a 31/10/2026).
             </p>
 
             <div className="bg-slate-900 text-slate-200 p-3.5 rounded-lg text-[11px] font-mono overflow-x-auto max-h-48 leading-relaxed">
@@ -1210,7 +1216,7 @@ export default function App() {
             <div className="space-y-3 text-xs text-slate-600 max-h-80 overflow-y-auto pr-1">
               <div>
                 <h4 className="font-bold text-slate-900 text-sm">Impactos (Impressões)</h4>
-                <p>Número total de vezes que as publicações, vídeos e stories foram exibidos aos usuários ({formatNumber(totals.impressoes)} impactos no consolidado de 01 a 27/10).</p>
+                <p>Número total de vezes que as publicações, vídeos e stories foram exibidos aos usuários ({formatNumber(totals.impressoes)} impactos no consolidado de 01 a 31/10).</p>
               </div>
               <div>
                 <h4 className="font-bold text-slate-900 text-sm">Alcance Consolidado</h4>
